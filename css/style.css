@@ -324,6 +324,85 @@ a {
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
   direction: rtl;
+  max-height: 1000px;
+  overflow-y: hidden;
+  transition: max-height 2.5s ease;
+  -webkit-transition: max-height 2.5s ease;
+  -moz-transition: max-height 2.5s ease;
+  -ms-transition: max-height 2.5s ease;
+  -o-transition: max-height 2.5s ease;
+}
+.section .container .toggle {
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 5px;
+  position: relative;
+  animation: float 0.6s alternate linear infinite;
+  -webkit-animation: float 0.6s alternate linear infinite;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.section .container .toggle:hover::after,
+.section .container .toggle:hover::before {
+  opacity: 1;
+}
+.section .container .toggle::after {
+  content: "";
+  position: absolute;
+  border: 6px solid #e6683c;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  left: 50%;
+  top: -5px;
+  opacity: 0;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+    transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+}
+.section .container .toggle::before {
+    content: "Show more";
+  position: absolute;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  font-size: 10px;
+  left: 50%;
+  top: -21px;
+  background-color: #e6683c;
+  font-weight: bold;
+  padding: 3px;
+  opacity: 0;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+    transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+}
+.section .container .toggle i {
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+ .section .container .toggle.active i{
+  transform: rotate(180deg); /* تدوير السهم لأعلى */
 }
 @media (max-width: 767px) {
   .section .container .cards {
@@ -610,5 +689,21 @@ footer .container .social .icons a:hover {
   to {
     opacity: 1;
   }
+}
+@keyframes float {
+  from {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+  to {
+    transform: translateY(5px);
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    -o-transform: translateY(5px);
+}
 }
 /* End Animation */

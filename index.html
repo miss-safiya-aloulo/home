@@ -14,8 +14,9 @@
     href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
     rel="stylesheet">
   <link rel="icon" href="media/logo.jpg" />
-<meta name="google-site-verification" content="VW8dvuNguZ2dutO8tB-bKaP9pIqEZLN5e4wz9rY6unk" /> 
+  <meta name="google-site-verification" content="VW8dvuNguZ2dutO8tB-bKaP9pIqEZLN5e4wz9rY6unk" />
   <title>Miss Safiya</title>
+  <meta name="description" content="">
 </head>
 
 <body>
@@ -68,7 +69,7 @@
     <div class="section-title">
       <h2 class="section-name">Maxims</h2>
     </div>
-    <p class="section-description">Here were you got some advice</p>
+    <p class="section-description">Here is were you got some advice</p>
     <div class="container">
       <div class="cards">
         <div class="card">
@@ -640,6 +641,7 @@
           </div>
         </div>
       </div>
+      <div class="toggle"><i class="fas fa-chevron-down"></i></div>
     </div>
   </div>
   <!-- End Grammar Section -->
@@ -1435,6 +1437,7 @@
           </div>
         </div>
       </div>
+      <div class="toggle"><i class="fas fa-chevron-down"></i></div>
     </div>
   </div>
   <!-- End Learn Section-->
@@ -1518,6 +1521,29 @@
     </div>
   </footer>
   <!-- End Footer -->
+  <script>
+    document.querySelectorAll('.section').forEach(section => {
+      const toggle = section.querySelector('.toggle');
+      const cards = section.querySelector('.cards');
+
+      // تأكد أن المحتوى مخفي افتراضيًا
+      cards.style.maxHeight = "1000px";
+      cards.style.overflow = "hidden";
+      let isExpanded = false;
+
+
+      toggle.addEventListener('click', () => {
+        if (isExpanded) {
+          cards.style.maxHeight = "1000px";
+          toggle.classList.remove('active');
+        } else {
+          cards.style.maxHeight = cards.scrollHeight + "px";
+          toggle.classList.add('active');
+        }
+        isExpanded = !isExpanded;
+      });
+    });
+  </script>
 </body>
 
 </html>
