@@ -482,6 +482,7 @@ a {
 }
 .section .container .cards .card .teacher {
   margin: 7px 0;
+  direction: ltr;
 }
 .section .container .cards .card .teacher a {
   color: black;
